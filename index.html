@@ -6,6 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <!-- Meta Tags -->
         <meta charset="UTF-8">
+        <script src="https://kit.fontawesome.com/a784a0246f.js" crossorigin="anonymous"></script>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Fonts Links (Roboto 400, 500 and 700 included) -->
@@ -16,34 +17,42 @@
         <title>Simple Page</title>
     </head>
     <body>
-        <sidebar id="primary-sidebar">
-            <img src="" alt="">
-            <button
-                type="button"
-                id="collapse"
-                aria-label="Collapse sidebar"
-                aria-expanded="true"
-                aria-controls="primary-sidebar"
-            >
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path d="m15 18-6-6 6-6"></path>
-                </svg>
-            </button>
-            <div>
-                <div>
-                    <img src="" alt="">
-                    <p>Favourite</p>
+        <sidebar id="primary-sidebar" class="primary-sidebar">
+            <div class="logo">
+                <p class="para">The Top Deals</p>
+                <button
+                    type="button"
+                    id="collapse"
+                    class="btn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                    aria-controls="primary-sidebar"
+                >
+                    <svg
+                        aria-label=""
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="content">
+                <div class = "fav">
+                    <p> <i class="fa-regular fa-heart heart"></i> Favourite</p>
                 </div>
                 <div class="custom-select-container">
                     <!-- 1. The Trigger Button -->
                     <button
                         type="button"
                         id="category-btn"
+                        class = "category-btn"
                         aria-haspopup="listbox"
                         aria-expanded="false"
                         aria-controls="category-list"
                     >
-                        Select Category
+                       <i class="fa-solid fa-table-list category"></i>   Select Category 
                     </button>
                     <!-- 2. The Unordered List (Hidden by default) -->
                     <ul
@@ -56,36 +65,41 @@
                         <li role="option" tabindex="-1">Skin care</li>
                     </ul>
                 </div>
-                <div>
-                    <img src="" alt="">
-                    <p>Home</p>
+                <div class = "fav">
+                    <p> <i class="fa-solid fa-house home"></i> Home</p>
+                </div>
+                <div class="theme"> 
+                    <button class = "switcher"><i class="fa-solid fa-toggle-on swt"></i>  Theme Switcher</button>
                 </div>
             </div>
         </sidebar>
         <nav>
-            <a href="#" target="_self">Home</a>
-            <div class="search-filter-container">
-                <!-- Visually hidden but read by screen readers -->
-                <label for="product" class="sr-only">Choose a product category</label>
-                <select id="product" name="product">
-                    <option value="">Select product</option>
-                    <option value="health">Health</option>
-                    <option value="skin-care">Skin care</option>
-                </select>
-                <!-- The image is now wrapped in a fully accessible button -->
-                <button type="button" id="search-btn" aria-label="Search products by category">
-                    <img src="search-icon.png" alt="" aria-hidden="true">
-                </button>
+            <div class = "nav-content">
+                <a href="#" target="_self">Home</a>
+                <div class="search-filter-container">
+                    <!-- Visually hidden but read by screen readers -->
+                    <label for="product" class="sr-only">Choose a product category</label>
+                    <select class = "product" id="product" name="product">
+                        <option value="">Select product</option>
+                        <option value="health">Health</option>
+                        <option value="skin-care">Skin care</option>
+                    </select>
+                    <!-- The image is now wrapped in a fully accessible button -->
+                    <button type="button" id="search-btn" aria-label="Search products by category">
+                        <i class="fa-solid fa-magnifying-glass search"></i>
+                    </button>
+                </div>
+                <a class = "blog" href="#" target="_self" rel="noreferrer">Blog</a>
             </div>
-            <a href="#" target="_self" rel="noreferrer">Blog</a>
+            <img class = "mode" src = "img\icon-sun.svg" alt = "light mode">
         </nav>
-        <main id="product-results" aria-live="polite"></main>
-        <sidebar id="side-content"></sidebar>
+        <main class = "main-content" id="product-results" aria-live="polite">
+        </main>
         <footer>
             <div class="footer">
                 <div class="foot">
                     <img src="" alt="">
-                    <p>About US</p>
+                    <p>About Me</p>
                 </div>
                 <div class="foot">
                     <p>Blog</p>
@@ -94,6 +108,7 @@
             </div>
         </footer>
         <noscript>Your browser don't support JavaScript!</noscript>
+        <script src = "products.js"></script>
         <script src="./app.js"></script>
     </body>
 </html>
