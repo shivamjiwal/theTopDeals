@@ -5,8 +5,8 @@
     "image": "/img/josephWell.webp",
     "authorName": "John Gilmore",
     "priceTiers": [
-    {"DigitalPrice": "Digital Format: $69.00 (Instant Download)"},
-    {"physicalPrice": "Physical Format: $69.00 + $9.95 Shipping & Handling"},
+    {"DigitalPrice": "Digital Format: $67.00 (Instant Download)"},
+    {"physicalPrice": "Physical Format: $67.00 + $9.95 Shipping & Handling"},
     {"Guarantee": "100% Money Back Guaranteed"}
      ],
     "productForm": "Hard/ digital copy both + 3 Free bonuses",
