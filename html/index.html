@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explore product guides and reviews on wellness, nutrition, and self-reliance. Find useful information to help you compare options and make informed choices.">
+        <meta name="robots" content="index, follow">
+        <meta name="theme-color" content="#101a2d">
+        <title>The Top Deals | Product Guides, Reviews &amp; Wellness</title>
+        <link rel="canonical" href="https://theTopDeals.top/">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="The Top Deals">
+        <meta property="og:title" content="The Top Deals | Product Guides, Reviews &amp; Wellness">
+        <meta property="og:description" content="Explore product guides and reviews on wellness, nutrition, and self-reliance. Find useful information to help you compare options and make informed choices.">
+        <meta property="og:url" content="https://theTopDeals.top/">
+        <meta property="og:image" content="https://theTopDeals.top/img/the-top-deals-social.png">
+        <meta property="og:image:alt" content="The Top Deals - product guides and reviews for wellness, nutrition, and self-reliance">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="The Top Deals | Product Guides, Reviews &amp; Wellness">
+        <meta name="twitter:description" content="Explore product guides and reviews on wellness, nutrition, and self-reliance. Find useful information to help you compare options and make informed choices.">
+        <meta name="twitter:image" content="https://theTopDeals.top/img/the-top-deals-social.png">
+        <meta name="twitter:image:alt" content="The Top Deals - product guides and reviews for wellness, nutrition, and self-reliance">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="https://kit.fontawesome.com/a784a0246f.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <sidebar id="primary-sidebar" class="primary-sidebar">
+            <section class="logo">
+                <p class="para">The Top Deals</p>
+                <button
+                    type="button"
+                    id="collapse"
+                    class="btn"
+                    aria-label="Collapse sidebar"
+                    aria-expanded="true"
+                    aria-controls="primary-sidebar"
+                >
+                    <svg
+                        aria-label=""
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                </button>
+            </section>
+            <div class="content">
+                <!-- <section class="fav">
+                    <p>
+                        <i class="fa-regular fa-heart heart"></i> Favourite
+                    </p>
+                </section> -->
+                <section class="fav">
+                    <a class="sidebar-link" href="#about-me" aria-label="About Me" title="About Me">
+                        <i class="fa-regular fa-heart heart" aria-hidden="true"></i>
+                        <span>About Me</span>
+                    </a>
+                </section>
+                <div class="custom-select-container">
+                    <!-- 1. The Trigger Button -->
+                    <button
+                        type="button"
+                        id="category-btn"
+                        class="category-btn"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-controls="category-list"
+                    >
+                        <i class="fa-solid fa-table-list category"></i>
+                        Select Category
+                    </button>
+                    <!-- 2. The Unordered List (Hidden by default) -->
+                    <ul
+                        id="category-list"
+                        role="listbox"
+                        aria-labelledby="category-btn"
+                        hidden
+                    >
+                        <li role="option" tabindex="-1">Health</li>
+                        <!-- <li role="option" tabindex="-1">Skin care</li> -->
+                    </ul>
+                </div>
+                <div class="fav">
+                    <a class="sidebar-link" href="../html/index.html" aria-label="Home" title="Home">
+                        <i class="fa-solid fa-house home" aria-hidden="true"></i>
+                        <span>Home</span>
+                    </a>
+                </div>
+                <div class="theme">
+                    <button class="switcher">
+                        <i class="fa-solid fa-toggle-on swt"></i>  Theme Switcher
+                    </button>
+                </div>
+            </div>
+        </sidebar>
+        <nav>
+            <div class="nav-content">
+                <a href="../html/index.html" target="_self">Home</a>
+                <div class="search-filter-container">
+                    <!-- Visually hidden but read by screen readers -->
+                    <label for="product" class="sr-only">Choose a product category</label>
+                    <select class="product" id="product" name="product">
+                        <option value="">Select product</option>
+                        <option value="health">Health</option>
+                        <!-- <option value="skin-care">Skin care</option> -->
+                    </select>
+                    <!-- The image is now wrapped in a fully accessible button -->
+                    <button type="button" id="search-btn" aria-label="Search products by category">
+                        <i class="fa-solid fa-magnifying-glass search"></i>
+                    </button>
+                </div>
+                <a
+                    class="blog"
+                    href="../html/blog.html"
+                    target="_self"
+                    rel="noreferrer"
+                >Blog</a>
+            </div>
+            <img class="mode" src="../img/icon-sun.svg" alt="light mode">
+        </nav>
+        <main class="main-content" id="product-results" aria-live="polite"></main>
+        <footer>
+            <div class="footer">
+                <section class="foot" id="about-me">
+                    <span class="foot-label">THE STORY</span>
+                    <h2>About Me</h2>
+                    <p>
+                        Welcome to The Top Deals - a place to discover thoughtful
+                        product guides and reads on wellness, nutrition, and
+                        self-reliance. We make exploring your options simpler,
+                        with clear takeaways to help you decide what works for you.
+                    </p>
+                </section>
+                <section class="foot" id="disclaimer">
+                    <span class="foot-label">A QUICK NOTE</span>
+                    <h2>Good to Know</h2>
+                    <p>
+                        Some links are affiliate links, which may earn me a
+                        commission at no extra cost to you. Our content is for
+                        general information, not medical advice. Always check
+                        product details and speak with a qualified healthcare
+                        professional before making health decisions if you are suffering with any illness or something like that.
+                    </p>
+                </section>
+                <section class="foot" id="explore-blog">
+                    <span class="foot-label">FRESH IDEAS</span>
+                    <h2>Explore the blog</h2>
+                    <p>
+                        Dive into practical guides, product reviews, and ideas
+                        for wellness, nutrition, and self-reliance.
+                    </p>
+                    <a class="foot-a" href="../html/blog.html">Browse all articles <span aria-hidden="true">&rarr;</span></a>
+                </section>
+            </div>
+        </footer>
+        <noscript>Your browser don't support JavaScript!</noscript>
+        <script src="../javascript/products.js"></script>
+        <script src="../javascript/app.js"></script>
+    </body>
+</html>

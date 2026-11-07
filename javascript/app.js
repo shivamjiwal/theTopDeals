@@ -20,12 +20,12 @@ products.forEach((product) => {
         <div class="product-card" id="card-${product.id}">
           <div class="product-image-container">
             <img class = "image" src="${product.image}" alt="${product.productTitle}">
-            <!-- Floating heart icon will sit here via CSS -->
+            <!-- Floating heart icon will sit here via CSS --> 
           </div>
           <div class="product-details">
             <span class="brand-name">By ${product.authorName}</span> 
              <span class="product-form-badge">${product.productForm}</span>
-            <h2 class="product-title">${product.productTitle}</h2>
+            <h2  class="product-title">${product.productTitle}</h2>
             <p class="short-description">${product.shortDescription}</p>
             <ul class="priceTier" type = "circle">
               ${product.priceTiers.map((tier) => `<li class="price">${Object.values(tier)[0]}</li>`).join("")}
@@ -37,7 +37,7 @@ products.forEach((product) => {
             <a href="${product.officialSiteUrl}" target ="_blank" rel="noopener noreferrer" class="btn-primary">Visit Official Site</a>
           </div>
           <div class="interaction-footer">
-            <button class="favorite-btn">Add to favorites</button>
+            <button class="favorite-btn" aria-hidden = "true">Add to favorites</button>
             <button class="rate-btn" aria-hidden = "true">Rate this product</button>
           </div>
         </div>
