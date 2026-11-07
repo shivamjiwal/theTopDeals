@@ -469,3 +469,196 @@ body.sidebar-collapsed #primary-sidebar .custom-select-container {
         grid-template-columns: 4.5rem minmax(0, 1fr);
     }
 }
+
+
+/* Responsive query starts here */
+
+/* =========================================================
+   1. Laptops & Large Tablets (1200px / 75rem and below)
+   Switches product grid from 3 columns to 2 columns
+   ========================================================= */
+@media (max-width: 75rem) {
+    body {
+        grid-template-columns: 13.5rem minmax(0, 1fr);
+        grid-template-rows: 5rem auto auto;
+        grid-template-areas:
+            "sidebar nav"
+            "sidebar main"
+            "sidebar footer";
+    }
+
+    body.sidebar-collapsed {
+        grid-template-columns: 4.5rem minmax(0, 1fr);
+    }
+
+    nav {
+        margin-right: 1.5rem;
+        padding-right: 1rem;
+    }
+
+    .nav-content {
+        width: 80%;
+    }
+
+    .main-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        justify-items: center;
+    }
+
+    .product-card {
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
+    }
+}
+
+/* =========================================================
+   2. Tablets (960px / 60rem and below)
+   Adjusts navigation spacing and stacks footer cards
+   ========================================================= */
+@media (max-width: 60rem) {
+    .nav-content {
+        width: 88%;
+        gap: 0.75rem;
+    }
+
+    .main-content {
+        grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
+        gap: 1.5rem;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+/* =========================================================
+   3. Mobile Phones & Small Tablets (768px / 48rem and below)
+   Stacks sidebar, navbar, main cards, and footer cleanly
+   ========================================================= */
+@media (max-width: 48rem) {
+    body,
+    body.sidebar-collapsed {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "sidebar"
+            "nav"
+            "main"
+            "footer";
+    }
+
+    /* Converts fixed left sidebar into a collapsible top bar */
+    .primary-sidebar,
+    body.sidebar-collapsed .primary-sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .logo,
+    body.sidebar-collapsed .logo {
+        justify-content: space-between;
+    }
+
+    body.sidebar-collapsed .logo p {
+        display: block;
+    }
+
+    .content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.75rem;
+    }
+
+    .theme {
+        margin-top: 0;
+    }
+
+    /* Clicking your existing #collapse button hides/shows menu on mobile */
+    body.sidebar-collapsed .primary-sidebar .content {
+        display: none;
+    }
+
+    body.sidebar-collapsed #collapse svg {
+        transform: rotate(-90deg);
+    }
+
+    /* Resets fixed navbar to fit mobile screen width */
+    nav,
+    body.sidebar-collapsed nav {
+        position: relative;
+        left: 0;
+        right: 0;
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+        padding: 0.75rem 1rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-content {
+        width: 82%;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    nav a:nth-child(1),
+    .blog {
+        font-size: 1rem;
+    }
+
+    .sr-only {
+        display: none;
+    }
+
+    .product {
+        max-width: 8.5rem;
+        font-size: 0.8rem;
+    }
+
+    /* 1-column full-width product cards on mobile */
+    .main-content {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .product-card {
+        width: 100%;
+        max-width: 22rem;
+    }
+
+    .action-buttons-group {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .btn-secondary,
+    .btn-primary {
+        width: auto;
+        flex: 1;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    footer {
+        margin: 1rem 0.75rem;
+        padding: 1.25rem;
+    }
+}
