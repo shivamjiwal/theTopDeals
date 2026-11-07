@@ -11,6 +11,45 @@ collapseButton.addEventListener("click", () => {
   );
 });
 
+const themeButtons = [
+  document.querySelector("#theme-toggle"),
+  document.querySelector("#mode-toggle"),
+].filter(Boolean);
+const themeIcon = document.querySelector("#mode-icon");
+const themeColorMeta = document.querySelector("#theme-color-meta");
+
+function setTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.dataset.theme = theme;
+  localStorage.setItem("theme", theme);
+
+  themeButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(isDark));
+    button.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light mode" : "Switch to dark mode",
+    );
+    const label = button.querySelector("span");
+    if (label) {
+      label.textContent = isDark ? "Switch to light mode" : "Switch to dark mode";
+    }
+  });
+
+  if (themeIcon) {
+    themeIcon.src = isDark ? "/img/icon-sun.svg" : "/img/icon-moon.svg";
+  }
+  if (themeColorMeta) {
+    themeColorMeta.content = isDark ? "#101a2d" : "#f8fafc";
+  }
+}
+
+setTheme(localStorage.getItem("theme") === "dark" ? "dark" : "light");
+themeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setTheme(document.body.dataset.theme === "dark" ? "light" : "dark");
+  });
+});
+
 // 3. Grab the container from your HTML page
 const container = document.querySelector("#product-results") || document.body;
 

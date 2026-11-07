@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Explore product guides and reviews on wellness, nutrition, and self-reliance. Find useful information to help you compare options and make informed choices.">
         <meta name="robots" content="index, follow">
-        <meta name="theme-color" content="#101a2d">
+        <meta id="theme-color-meta" name="theme-color" content="#f8fafc">
         <title>The Top Deals | Product Guides, Reviews &amp; Wellness</title>
         <link rel="canonical" href="https://theTopDeals.top/">
         <meta property="og:type" content="website">
@@ -25,10 +25,10 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-        <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="/css/styles.css">
         <script src="https://kit.fontawesome.com/a784a0246f.js" crossorigin="anonymous"></script>
     </head>
-    <body>
+    <body data-theme="light">
         <sidebar id="primary-sidebar" class="primary-sidebar">
             <section class="logo">
                 <p class="para">The Top Deals</p>
@@ -87,21 +87,22 @@
                     </ul>
                 </div>
                 <div class="fav">
-                    <a class="sidebar-link" href="index.html" aria-label="Home" title="Home">
+                    <a class="sidebar-link" href="/" aria-label="Home" title="Home">
                         <i class="fa-solid fa-house home" aria-hidden="true"></i>
                         <span>Home</span>
                     </a>
                 </div>
                 <div class="theme">
-                    <button class="switcher">
-                        <i class="fa-solid fa-toggle-on swt"></i>  Theme Switcher
+                    <button class="switcher" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                        <i class="fa-solid fa-toggle-on swt" aria-hidden="true"></i>
+                        <span>Switch to dark mode</span>
                     </button>
                 </div>
             </div>
         </sidebar>
         <nav>
             <div class="nav-content">
-                <a href="index.html" target="_self">Home</a>
+                <a href="/" target="_self">Home</a>
                 <div class="search-filter-container">
                     <!-- Visually hidden but read by screen readers -->
                     <label for="product" class="sr-only">Choose a product category</label>
@@ -117,12 +118,14 @@
                 </div>
                 <a
                     class="blog"
-                    href="blog.html"
+                    href="/blog/"
                     target="_self"
                     rel="noreferrer"
                 >Blog</a>
             </div>
-            <img class="mode" src="./img/icon-sun.svg" alt="light mode">
+            <button class="mode" id="mode-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+                <img id="mode-icon" src="/img/icon-moon.svg" alt="" width="22" height="22">
+            </button>
         </nav>
         <main class="main-content" id="product-results" aria-live="polite"></main>
         <footer>
@@ -155,12 +158,12 @@
                         Dive into practical guides, product reviews, and ideas
                         for wellness, nutrition, and self-reliance.
                     </p>
-                    <a class="foot-a" href="blog.html">Browse all articles <span aria-hidden="true">&rarr;</span></a>
+                    <a class="foot-a" href="/blog/">Browse all articles <span aria-hidden="true">&rarr;</span></a>
                 </section>
             </div>
         </footer>
         <noscript>Your browser don't support JavaScript!</noscript>
-        <script src="./javascript/products.js"></script>
-        <script src="./javascript/app.js"></script>
+        <script src="/javascript/products.js"></script>
+        <script src="/javascript/app.js"></script>
     </body>
 </html>
