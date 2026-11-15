@@ -206,7 +206,7 @@ main {
 .brand-name,
 .product-form-badge {
     font-size: 0.9rem;
-    color: rgb(50%, 50%, 50%);
+    color: #242424;
     text-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.1);
 }
 
@@ -221,7 +221,7 @@ main {
 .short-description {
     font-size: 1.1rem;
     line-height: 1.5rem;
-    color: rgb(50%, 50%, 50%);
+    color: #575757;
     text-shadow: 0.0625rem 0.0625rem 0.625rem rgba(50%, 50%, 50%, 0.4);
     width: 92%;
     margin-bottom: 1.5rem;
@@ -232,7 +232,7 @@ main {
     width: 90%;
     line-height: 1.5rem;
     margin-bottom: 1.5rem;
-    color: rgb(70%, 60%, 60%);
+    color: #575757;
     text-shadow: 0.0625rem 0.0625rem 0.625rem rgba(0, 0, 0, 0.1);
 }
 
