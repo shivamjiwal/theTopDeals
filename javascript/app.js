@@ -69,7 +69,7 @@ products.forEach((product) => {
                 height="240">
             <img class = "image" src="${product.image}" alt="${product.productTitle}"  width="227" 
              height="310"
-             loading="lazy">>
+             >
              </picture> 
           </div>
           <div class="product-details">
