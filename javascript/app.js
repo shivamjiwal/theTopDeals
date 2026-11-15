@@ -31,7 +31,9 @@ function setTheme(theme) {
     );
     const label = button.querySelector("span");
     if (label) {
-      label.textContent = isDark ? "Switch to light mode" : "Switch to dark mode";
+      label.textContent = isDark
+        ? "Switch to light mode"
+        : "Switch to dark mode";
     }
   });
 
@@ -58,8 +60,17 @@ products.forEach((product) => {
   const cardHTML = `
         <div class="product-card" id="card-${product.id}">
           <div class="product-image-container">
-            <img class = "image" src="${product.image}" alt="${product.productTitle}">
-            <!-- Floating heart icon will sit here via CSS --> 
+            <picture>
+             <source 
+                media="(min-width: 768px)" 
+                srcset="${product.image} 1x, 
+                ${product.image} 2x"
+                width="240"
+                height="240">
+            <img class = "image" src="${product.image}" alt="${product.productTitle}"  width="227" 
+             height="310"
+             loading="lazy">>
+             </picture> 
           </div>
           <div class="product-details">
             <span class="brand-name">By ${product.authorName}</span> 
