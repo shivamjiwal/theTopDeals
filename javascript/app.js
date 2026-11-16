@@ -60,7 +60,7 @@ products.forEach((product) => {
   const cardHTML = `
         <div class="product-card" id="card-${product.id}">
           <div class="product-image-container">
-            <picture>
+             <picture>
              <source 
                 media="(min-width: 768px)" 
                 srcset="${product.image} 1x, 
